@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Registration Form" />
+
+    <title>FORM</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1><i>Registration Form</i></h1>
+      <div class="form-container">
+        <form>
+          <div class="input-name">
+            <!-- user -->
+            <i class="fa fa-user lock" aria-hidden="true"></i>
+            <input type="text" placeholder="First Name" class="name" required />
+
+            <span>
+              <i class="fa fa-user lock" aria-hidden="true"></i>
+              <input
+                type="text"
+                placeholder="Last Name"
+                class="name"
+                required
+              />
+            </span>
+            <!-- envelope  -->
+          </div>
+          <div class="input-name">
+            <i
+              class="fa fa-envelope lock"
+              aria-hidden="true"
+              style="width: 31px"
+            ></i>
+            <input
+              type="email"
+              placeholder="Email address"
+              class="envelope"
+              required
+            />
+          </div>
+          <!-- password  -->
+          <div class="input-name">
+            <i class="fa fa-lock lock" aria-hidden="true"></i>
+            <input
+              type="text"
+              placeholder="Password"
+              class="envelope"
+              required
+            />
+          </div>
+          <div class="input-name">
+            <i class="fa fa-lock lock" aria-hidden="true"></i>
+            <input
+              type="text"
+              placeholder="Confirm Password"
+              class="envelope"
+              required
+            />
+          </div>
+          <!-- Radio button  -->
+          <div class="input-name">
+            <label>
+              <input
+                type="radio"
+                id="male"
+                class="btn"
+                name="gender"
+                value="male"
+                required
+              />
+              Male
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="female"
+                class="btn"
+                name="gender"
+                value="female"
+                required
+              />
+              Female
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="other"
+                class="btn"
+                name="gender"
+                value="other"
+                required
+              />
+              Other
+            </label>
+          </div>
+          <!-- select  -->
+          <div class="input-name">
+            <select class="select" aria-placeholder="Select city" required>
+              <option value="" disabled selected>Select city</option>
+              <option value="0">Delhi</option>
+              <option value="1">Uttarakhand</option>
+              <option value="2">Kashmir</option>
+              <option value="3">Jharkhand</option>
+              <option value="4">Hedrabad</option>
+            </select>
+            <div class="arrow"></div>
+          </div>
+          <!-- checkbox -->
+          <div class="input-name">
+            <input type="checkbox" id="cb" class="checkbox" required />
+            <label for="cb" class="checkmark">
+              Agree to the terms and conditions</label
+            >
+          </div>
+          <div class="input-name">
+            <input type="submit" id="hello" class="submit" value="Register" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Popup -->
+    <div id="popupOverlay">
+      <div id="popupBox">
+        <p>Registration Successful!</p>
+        <button class="closeBtn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
