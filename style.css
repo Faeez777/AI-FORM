@@ -13,14 +13,16 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+  background: #f5f5f5;
 }
+
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f5f5f5;
-  font-size: 0.875rem !important;
+  background: #f5f5f5;
+  font-size: 0.875rem;
   color: #222;
 }
+
 .container {
   width: 31.25rem;
   padding: 1.875rem;
@@ -28,13 +30,13 @@ body {
   border-top: 0.3125rem solid rgba(0, 64, 255, 0.734);
   border-bottom: 0.3125rem solid rgba(0, 64, 255, 0.734);
   box-shadow: 0 0 0.5rem 0.3125rem rgba(0, 0, 0, 0.5);
-  background-color: #fff;
+  background: #fff;
   border-radius: 0.5rem;
 }
 
 .container h1 {
   text-align: center;
-  padding: 1.125rem 0 0.875rem 0;
+  padding: 1.125rem 0 0.875rem;
   color: #111;
   font-size: 2rem;
   font-weight: 700;
@@ -42,8 +44,8 @@ body {
   background: linear-gradient(90deg, #e3f0ff 0%, #f5faff 100%);
   border-radius: 0.5rem 0.5rem 0 0;
   box-shadow: 0 2px 8px rgba(0, 64, 255, 0.08);
-  position: relative;
   margin-bottom: 1.125rem;
+  position: relative;
 }
 
 .input-name {
@@ -51,23 +53,32 @@ body {
   width: 90%;
   position: relative;
 }
+
 .lock {
   padding: 0.5rem 0.625rem 0.5rem 0.5rem;
   position: absolute;
 }
-.name {
+
+.name,
+.envelope {
   width: 45%;
   padding: 0.5rem 0 0.5rem 2.5rem;
+  outline-color: #ffbb00;
+  border: 1px solid #888;
+  border-radius: 0.3125rem;
+  transition: all 0.3s;
+  background: #f9faff;
+}
+
+.envelope {
+  width: 100%;
+  padding-left: 2.8125rem;
 }
 
 .input-name span {
   margin-left: 2.1875rem;
 }
 
-.envelope {
-  width: 100%;
-  padding: 0.5rem 0 0.5rem 2.8125rem;
-}
 .input-name i {
   position: absolute;
   left: 0.75rem;
@@ -81,19 +92,11 @@ body {
   color: royalblue;
   border-right: 1px solid #888;
 }
-.name,
-.envelope {
-  outline-color: #ffbb00;
-  border: 1px solid #888;
-  border-radius: 0.3125rem;
-  transition: all 0.3s ease-in-out;
-  background: #f9faff;
-}
 
 .envelope:hover,
 .name:hover,
 .btn:hover {
-  background-color: #e6ffb7;
+  background: #e6ffb7;
   cursor: pointer;
 }
 
@@ -250,13 +253,12 @@ body {
 .select:hover + .arrow {
   border-top-color: #0040ff;
 }
-.checkmark:hover {
-  cursor: pointer;
-}
+
 .checkmark {
   margin-right: 0.9375rem;
   position: relative;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .checkmark::before {
@@ -268,7 +270,7 @@ body {
   vertical-align: -2px;
   border: 2.5px solid #888;
   padding: 0.25rem;
-  background-color: transparent;
+  background: transparent;
   background-clip: content-box;
   box-sizing: border-box;
   transition: border-color 0.2s;
@@ -277,8 +279,9 @@ body {
 .checkbox:checked + .checkmark::after {
   border-right: 3px solid #009900;
   border-top: 3px solid #009900;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
+
 .checkmark::after {
   border-right: 3px solid #222;
   border-top: 3px solid #222;
@@ -294,6 +297,7 @@ body {
   opacity: 0;
   transition: top 0.3s, opacity 0.3s;
 }
+
 .checkbox {
   border: 0;
   clip: rect(0 0 0 0);
@@ -304,13 +308,16 @@ body {
   position: absolute;
   width: 1px;
 }
+
 .checkbox:hover + .checkmark::before,
 .checkbox:focus-visible + .checkmark::before {
   border-color: #0040ff;
 }
+
 .checkbox:checked + .checkmark::before {
   border-color: #009900;
 }
+
 .checkbox:checked + .checkmark::after {
   animation: check-popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
   display: block;
@@ -334,6 +341,7 @@ body {
     height: 1.25rem;
   }
 }
+
 @keyframes check {
   0% {
     height: 0;
@@ -356,6 +364,7 @@ body {
     opacity: 1;
   }
 }
+
 .submit {
   width: 100%;
   height: 2.8125rem;
@@ -382,6 +391,7 @@ body {
   outline: 2px solid #00c853;
   outline-offset: 2px;
 }
+
 .submit:active {
   box-shadow: 0 6px 24px rgba(0, 200, 83, 0.18), 0 2px 8px rgba(0, 0, 0, 0.12);
   animation: click-press 0.15s;
@@ -401,6 +411,7 @@ body {
     box-shadow: 0 6px 24px rgba(0, 200, 83, 0.18);
   }
 }
+
 @media (max-width: 600px) {
   .container {
     width: 95%;
@@ -424,33 +435,12 @@ body {
     padding: 0.5rem;
   }
 }
-/* popup  */
-#popupOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-#popupBox {
-  background: white;
-  padding: 1.875rem;
-  border-radius: 0.625rem;
-  text-align: center;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
-}
 
 .closeBtn {
   margin-top: 1.25rem;
   padding: 0.625rem 1.25rem;
-  background-color: #007bff;
-  color: white;
+  background: #007bff;
+  color: #fff;
   border: none;
   border-radius: 0.3125rem;
   cursor: pointer;
@@ -459,7 +449,7 @@ body {
 
 .closeBtn:hover,
 .closeBtn:focus-visible {
-  background-color: #0056b3;
+  background: #0056b3;
   outline: 2px solid #0056b3;
   outline-offset: 2px;
 }
